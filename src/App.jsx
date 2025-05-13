@@ -102,17 +102,18 @@ function App() {
 
       <h3 style={{ marginTop: "16px" }}>試驗藥物：</h3>
       {drugs.map((d, i) => (
-        <input
-          key={i}
-          value={d}
-          placeholder={`藥物 ${i + 1}`}
-          onChange={e => {
-            const copy = [...drugs];
-            copy[i] = e.target.value;
-            setDrugs(copy);
-          }}
-          style={{ display: "block", marginBottom: "4px" }}
-        />
+        <div key={i} style={{ display: "flex", justifyContent: "center" }}>
+          <input
+            value={d}
+            placeholder={`藥物 ${i + 1}`}
+            onChange={e => {
+              const copy = [...drugs];
+              copy[i] = e.target.value;
+              setDrugs(copy);
+            }}
+            style={{ marginBottom: "4px", textAlign: "center" }}
+          />
+        </div>
       ))}
 
       <h3>試驗動物：</h3>
